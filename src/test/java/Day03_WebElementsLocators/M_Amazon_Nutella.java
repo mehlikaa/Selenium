@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.List;
+
 public class M_Amazon_Nutella {
 
     public static void main(String[] args) throws InterruptedException {
@@ -31,5 +33,10 @@ public class M_Amazon_Nutella {
         WebElement aramaButton= driver.findElement(By.id("nav-search-submit-button"));
         aramaButton.click();
 
+// Acilan sayfada toplamda kac link var.
+       List<WebElement> linkListem=driver.findElements(By.tagName("a"));
+        // System.out.println("link Listem --> "+linkListem);
+        System.out.println("Kac link var --> "+linkListem.size());
+driver.close();
     }
 }
